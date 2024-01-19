@@ -27,3 +27,39 @@ str1 = "fast"
 str2 = "cats"
 
 print(edit_distance(str1,str2,len(str1),len(str2)))
+
+
+#Using Dynamic programming
+
+def edit_distance(str1,str2,m,n,mem = None):
+    
+    if mem is None:
+        mem = {}
+    
+    if (m,n) in mem:
+        return mem[(m,n)]
+    
+    if m == 0:
+       return n
+    
+    if n == 0:
+       return m
+    
+    if str1[m-1] == str2[n-1]:
+        result =  edit_distance(str1,str2,m-1,n-1,mem)
+        
+    else:
+        result =  1+ min(edit_distance(str1,str2,m,n-1,mem),
+        edit_distance(str1,str2,m-1,n,mem),
+        edit_distance(str1,str2,m-1,n-1,mem))
+        
+    mem[(m,n)] = result  
+   
+    return result
+        
+
+str1 = "fast"
+str2 = "cats"
+
+print(edit_distance(str1,str2,len(str1),len(str2)))
+
