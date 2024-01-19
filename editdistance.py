@@ -1,6 +1,6 @@
 # if we have two strings let's say u = fast and v = cats.The edit distance is nothing but the number of edits required to convert the first string to the other.
 
-#Brute force
+#Brute force Time Complexity --> 3 ^ (m+n) = exponential time complexity
 def edit_distance(str1,str2,m,n):
 
   #If the first string is empty we need to add n number of characters
@@ -29,7 +29,7 @@ str2 = "cats"
 print(edit_distance(str1,str2,len(str1),len(str2)))
 
 
-#Using Dynamic programming
+#Using Dynamic programming --> O(m * n) -->quadratic time complexity
 
 def edit_distance(str1,str2,m,n,mem = None):
     
