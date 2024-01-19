@@ -1,6 +1,6 @@
 # Fibanocii series : 1,1,2,3,5,8..... ->We obtain this series by following this if you want third number we add first and second number.
 
-#Using Brute Force
+#Using Brute Force  -> 2 ^ n exponential complexity
 
 def fibanocii(n):
   if n == 1 or n == 2:
@@ -13,7 +13,7 @@ n = int(input("Enter number"))
 print(fibanocii(n))
 
 
-# Using Dynamic Programming with the help of memoization
+# Using Dynamic Programming with the help of memoization --> O(n) linear time complexity
 # memoization -> The process of storing the result and using it later.This way the process of calaculating the result can be reduced.
 
 def fibanocii(n,mem):
